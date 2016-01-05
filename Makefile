@@ -8,7 +8,7 @@ AppNameStr	 = "$(AppName)"
 AppLocal	 = /$(AppName)
 
 # Root folder for NGINX, Mongo and Node sources and configs
-DeployRoot  = /usr/local/var/$(AppLocal)
+DeployRoot  = /usr/local/var$(AppLocal)
 
 # Tools and servers folders
 MongoDBRoot = $(DeployRoot)/mongodb
