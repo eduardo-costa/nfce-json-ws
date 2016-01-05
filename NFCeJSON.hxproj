@@ -2,9 +2,9 @@
 <project version="2">
   <!-- Output SWF options -->
   <output>
-    <movie outputType="CustomBuild" />
+    <movie outputType="Application" />
     <movie input="" />
-    <movie path="deploy\haxe\app.js" />
+    <movie path="deploy\server\app.js" />
     <movie fps="0" />
     <movie width="0" />
     <movie height="0" />
@@ -16,20 +16,21 @@
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
-    <class path="." />
+    <class path="source" />
   </classpaths>
   <!-- Build options -->
   <build>
     <option directives="" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
-    <option mainClass="" />
+    <option mainClass="Main" />
     <option enabledebug="False" />
     <option additional="" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>
-    <!-- example: <library name="..." /> -->
+    <library name="hxnodejs" />
+    <library name="nodews" />
   </haxelib>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
@@ -38,8 +39,8 @@
     <compile path="source\Dungeon00.hx" />
     <compile path="source\examples\dungeon\DungeonApp.hx" />
     <compile path="source\examples\curves\Main.hx" />
-    <compile path="source\Main.hx" />
     <compile path="MainHTML.hx" />
+    <compile path="source\Main.hx" />
   </compileTargets>
   <!-- Paths to exclude from the Project Explorer tree -->
   <hiddenPaths>
@@ -53,7 +54,7 @@
   <options>
     <option showHiddenPaths="False" />
     <option testMovie="Custom" />
-    <option testMovieCommand="test\Run.bat" />
+    <option testMovieCommand="deploy\server\Run.bat" />
   </options>
   <!-- Plugin storage -->
   <storage />
