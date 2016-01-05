@@ -45,6 +45,13 @@ stop:
 	
 install:
 	
+	# Create main directories
+	sudo mkdir -p $(DeployRoot)
+	sudo mkdir -p $(ServerLog)
+	# sudo mkdir -p $(MongoDBRoot)
+	# sudo mkdir -p $(MongoDBLog)
+	# sudo mkdir -p $(MongoDBLog)
+		
 	# Updates OS repositories listings
 	sudo apt-get update
 	
