@@ -29,7 +29,7 @@ class NFCEApp extends ApplicationMVC<Model,View,ServiceController>
 		
 		//Must be added in the root for event propagating.
 		http = cast AddComponent(HttpComponent);
-		http.Listen(9000);
+		http.Listen(80);
 		
 	}	
 	

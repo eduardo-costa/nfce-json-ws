@@ -1378,7 +1378,7 @@ server_NFCEApp.prototype = $extend(nws_ApplicationMVC.prototype,{
 		this.view = this.AddComponent(nws_view_View);
 		this.controller = this.AddComponent(server_controller_ServiceController);
 		this.http = this.AddComponent(nws_component_net_HttpComponent);
-		this.http.Listen(9000);
+		this.http.Listen(80);
 	}
 	,__class__: server_NFCEApp
 });
