@@ -34,7 +34,7 @@ destroy:
 	
 stop:	
 	# Stop node servers
-	sudo forever stop nfce-json
+	sudo forever stop nfce-json-ws
 	
 install:
 	
@@ -43,10 +43,10 @@ install:
 	
 	# Install all goodies
 	make -i install-node
-	make -i install-mongo
+	# make -i install-mongo
 		
 	# Runs mongodb daemon with custom config files
-	make -i run-mongo
+	# make -i run-mongo
 	
 	# Run nodejs daemons
 	make -i run-node
@@ -87,7 +87,7 @@ run-mongo:
 
 run-node:
 	sudo forever stop editor	
-	sudo forever start -a -l $(ServerLog)/log.log -e $(ServerLog)/err.log -o $(ServerLog)/out.log --workingDir $(LocalServerData) --uid "editor" $(LocalServerData)/app.js -vvvv
+	sudo forever start -a -l $(ServerLog)/log.log -e $(ServerLog)/err.log -o $(ServerLog)/out.log --workingDir $(LocalServerData) --uid "nfce-json-ws" $(LocalServerData)/app.js -vvvv
 
 update-server:
 	# Updates from versioning

@@ -5,8 +5,7 @@ Creates a webservice to  retrieve and output NFCE data for a given state and cod
 
 Run `sudo apt-get install make`.  
 Run `sudo apt-get install git`.  
-Run `git clone https://eduardo_costa@bitbucket.org/eduardo_costa/haxor-editor`.  
-Run `hg update dev`.  
+Run `git clone https://github.com/eduardo-costa/nfce-json-ws.git`.  
 Run `make` in order to download packages and make the first install/run.  
 
 ## Update
