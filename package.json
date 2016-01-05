@@ -1,0 +1,16 @@
+{
+  "name": "nfce-json-ws",
+  "description": "Web Application for loading and displaying NFCe data as Json",
+  "version": "1.0.0",
+  "dependencies": 
+  {
+	"mongodb": "^2.0.35",	
+	"request": "*",
+	"ws": "^0.7.2",
+	"http-server": "*",
+	"node-static": "*",
+	"send": "*",
+	"nfce-json": "^1.0.0",
+	"authom": "git+https://github.com/haxorplatform/authom.git#master"
+  }
+}
