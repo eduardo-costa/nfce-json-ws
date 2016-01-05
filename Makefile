@@ -4,6 +4,7 @@
 
 LinuxStdBase = trusty
 AppName		 = nfce-json-ws
+AppNameStr	 = "$(AppName)"
 AppLocal	 = /$(AppName)
 
 # Root folder for NGINX, Mongo and Node sources and configs
@@ -23,9 +24,15 @@ LocalServerData	  = $(LocalRoot)/server
 LocalClientData   = $(LocalRoot)/client
 
 repo:
-	
-all: 	
+	git pull -v --progress  "origin"
 
+all: 	
+	# Pull up to date repo
+	make -i repo
+	
+	# Install stuff
+	make -i install
+	
 clean:	
 	# Stop everything
 	make -i stop	
@@ -34,7 +41,7 @@ destroy:
 	
 stop:	
 	# Stop node servers
-	sudo forever stop nfce-json-ws
+	sudo forever stop $(AppName)
 	
 install:
 	
@@ -86,8 +93,8 @@ run-mongo:
 	sudo mongod --config $(MongoDBRoot)/mongod.conf
 
 run-node:
-	sudo forever stop editor	
-	sudo forever start -a -l $(ServerLog)/log.log -e $(ServerLog)/err.log -o $(ServerLog)/out.log --workingDir $(LocalServerData) --uid "nfce-json-ws" $(LocalServerData)/app.js -vvvv
+	sudo forever stop $(AppName)	
+	sudo forever start -a -l $(ServerLog)/log.log -e $(ServerLog)/err.log -o $(ServerLog)/out.log --workingDir $(LocalServerData) --uid $(AppNameStr) $(LocalServerData)/app.js -vvvv
 
 update-server:
 	# Updates from versioning
